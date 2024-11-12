@@ -560,6 +560,8 @@
                 1. Render the entire react app inside 'BrowserRouter' component of react-router-dom Library, provide this step inside main.jsx file
                 2. Inorder to set up path for component, make sure each component must be inside 'Routes' Compoenet of react-router-dom Library, provide this step inside App.jsx file
                 3. To set up path for component, use 'Route' component of react-router-dom Library. Route Compoenet has attributes like 'path' and 'element' inorder setup route for component. All Route component must be inside Routes component
+            - Dynamic Routing : we can set up a dynamic / changing value in a url along : symbol, so react app will understand value along with a : is dynamic part of this url.
+            - To set up Page not found url use path as * , its path must be set up at the end of all url in react app
         16. Higher Order Compoenets (HOC) : are component whose props argument will give another Compoenet, ex: Route component
         17. API Call in react :
             - Using Axios Library : install axios - npm i axios
