@@ -615,16 +615,17 @@
             - configureStore() : used to create store for redux. 
                 - steps to create redux store in react app
                     - create a folder redux logic in src folder
-                    - Inside redux folder create a js file for creating redux store, call configureStore method and use reducers to hold the state to be shared / stored in store
+                    - Inside redux folder create a js file for creating redux store, call configureStore method and use reducers to hold the state to be shared / stored in store return redux store
                 - To provide store to our react app use 'Provider' component of react-redux library. Provider component has 'store' attribute using it we can provide our store to react app. Inorder to do that make Provider component as the root component of our react app. Give these steps in main.jsx file
             - createReducer() : used to create reducers where we can store updated state inside store
             - createAction() : used to create action where we can define logic to update state , output of action automatically return to its reducer
-            - createSlice() : used to combine action and reducer in a single file. return actions and reducer . it accept initial state, slice name, object of reducer
+            - createSlice() : used to combine action and reducer in a single file. return actions and reducer . it accept initial state, slice name, object of reducer where we can use key as 'action name' and its value as 'reducer function'
                 - steps slice for react app
                     - create js file for defining slice 
                     - createSlice method call where we have to define reducers as objects, its key act as action and its value act as reducer function it has  minimum one argument which gives slice state
+            - createAsyncThunk() : used to make Asynchrounous call in an action in redux. It accept 2 arguments, first is action type string ("slice-name/action-name"), 2nd argument is a callback function it can return promise. it output can be 3 different types. pending state/fulfilled state/rejected state. 'ExtraReducers' in slice can handle promise return by an action. Because it has define different cases to update slice state, based on promise output. ExtraReducers can assign a function, it 1st argument (builder) can add cases for updating state according to each case.
         4. Hooks used in Compoenet for managing state using redux
-             - useSelector(state=>state.reducer-name) : used to select state from store in a component
+             - useSelector(state=>state.reducer-name) : used to select state from store in a component, it return updated state store inside the store reducer key
              - useDispatch() : used to execute an action from a component. Hook will return a function that is capable of dispatching an action as its argument when we call the function
-                -  action without argument : dispatch-function(action-name())
+                - action without argument : dispatch-function(action-name())
                 - action with argument : dispatch-function(action-name(arg1,...)) , to access argument of action in slice reduce function it uses its second argument which is an object with 2 key payload and type. payload will give the argument from action dispatched by a Compoenet
